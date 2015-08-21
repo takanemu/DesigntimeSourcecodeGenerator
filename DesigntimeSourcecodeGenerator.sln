@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesigntimeSourcecodeGenerator", "DesigntimeSourcecodeGenerator\DesigntimeSourcecodeGenerator.csproj", "{B0CDE13B-E2DF-4B66-A5A6-00EDFFEE158A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesigntimeSourcecodeGenerator.Demo", "DesigntimeSourcecodeGenerator.Demo\DesigntimeSourcecodeGenerator.Demo.csproj", "{78AF7716-F844-49F9-982D-FC46A49D1434}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0CDE13B-E2DF-4B66-A5A6-00EDFFEE158A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0CDE13B-E2DF-4B66-A5A6-00EDFFEE158A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0CDE13B-E2DF-4B66-A5A6-00EDFFEE158A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0CDE13B-E2DF-4B66-A5A6-00EDFFEE158A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78AF7716-F844-49F9-982D-FC46A49D1434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78AF7716-F844-49F9-982D-FC46A49D1434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78AF7716-F844-49F9-982D-FC46A49D1434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78AF7716-F844-49F9-982D-FC46A49D1434}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
