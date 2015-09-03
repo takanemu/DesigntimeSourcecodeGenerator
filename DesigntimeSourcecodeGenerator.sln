@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesigntimeSourcecodeGenerat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesigntimeSourcecodeGenerator.Demo", "DesigntimeSourcecodeGenerator.Demo\DesigntimeSourcecodeGenerator.Demo.csproj", "{78AF7716-F844-49F9-982D-FC46A49D1434}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template", "Template\Template.csproj", "{42DB0153-AA11-4486-8AE3-03028A824E3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{CFC18001-12DB-4306-965C-82E3C68E2E2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{F9DA03CA-7634-4AA6-91CD-EC592E995722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,17 @@ Global
 		{78AF7716-F844-49F9-982D-FC46A49D1434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78AF7716-F844-49F9-982D-FC46A49D1434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78AF7716-F844-49F9-982D-FC46A49D1434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DB0153-AA11-4486-8AE3-03028A824E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DB0153-AA11-4486-8AE3-03028A824E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DB0153-AA11-4486-8AE3-03028A824E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DB0153-AA11-4486-8AE3-03028A824E3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0CDE13B-E2DF-4B66-A5A6-00EDFFEE158A} = {CFC18001-12DB-4306-965C-82E3C68E2E2E}
+		{78AF7716-F844-49F9-982D-FC46A49D1434} = {F9DA03CA-7634-4AA6-91CD-EC592E995722}
+		{42DB0153-AA11-4486-8AE3-03028A824E3A} = {F9DA03CA-7634-4AA6-91CD-EC592E995722}
 	EndGlobalSection
 EndGlobal
