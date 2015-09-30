@@ -68,6 +68,17 @@ namespace DesigntimeSourcecodeGenerator.Demo.ViewModel
 				this.RaisePropertyChanged(() => this.School);
 			}
 		}
+		public string SilentSchool
+		{
+			set 
+			{ 
+				if ( this._school == value ) {
+					return;
+				}
+				this._school = value; 
+				this.RaisePropertyChanged(() => this.School);
+			}
+		}
 #endregion
 #region クリック
 		/// <summary>

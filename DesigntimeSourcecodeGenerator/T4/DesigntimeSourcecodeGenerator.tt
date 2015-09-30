@@ -546,6 +546,22 @@ private void GenerateCLRAccessor(string typeConverter, string propertyType
 			}
 		}
 <#+
+	if (setNotificator)
+	{
+#>
+		public <#= propertyType #> Silent<#= propertyName #>
+		{
+			<#= privateSetter ? "private " : ""#>set 
+			{ 
+				if ( this.<#= fieldname #> == value ) {
+					return;
+				}
+				this.<#= fieldname #> = value; 
+				this.RaisePropertyChanged(() => this.<#= propertyName #>);
+			}
+		}
+<#+
+	}
 }
 /// <summary>
 /// DependencyProperty生成します
