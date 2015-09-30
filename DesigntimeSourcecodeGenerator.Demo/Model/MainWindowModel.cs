@@ -1,12 +1,15 @@
-﻿using Designtime.Sourcecode.Generator.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesigntimeSourcecodeGenerator.Demo.Model
+﻿namespace DesigntimeSourcecodeGenerator.Demo.Model
 {
+    using Designtime.Sourcecode.Generator.Attributes;
+
+    [TemplateGenerateAnnotation(Kind = "Logger", Comment = "Logger")]
+    public partial class TestClass
+    {
+        public TestClass()
+        {
+        }
+    }
+
     [TemplateGenerateAnnotation(Kind = "Logger", Comment = "Logger")]
     [TemplateGenerateAnnotation(Kind = "Singleton", Comment = "Singleton")]
     public partial class MainWindowModel
@@ -18,5 +21,10 @@ namespace DesigntimeSourcecodeGenerator.Demo.Model
         private void InstanceConstructor()
         {
         }
+    }
+
+    [TemplateGenerateAnnotation(Kind = "Logger", Comment = "Logger")]
+    public partial class SubClass
+    {
     }
 }

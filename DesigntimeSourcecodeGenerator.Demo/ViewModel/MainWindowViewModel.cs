@@ -1,14 +1,9 @@
-﻿using Designtime.Sourcecode.Generator.Attributes;
-using DesigntimeSourcecodeGenerator.Demo.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace DesigntimeSourcecodeGenerator.Demo.ViewModel
+﻿namespace DesigntimeSourcecodeGenerator.Demo.ViewModel
 {
+    using Designtime.Sourcecode.Generator.Attributes;
+    using DesigntimeSourcecodeGenerator.Demo.Model;
+    using System;
+
     public class SelectChangedEventArgs : EventArgs
     {
     }

@@ -263,7 +263,12 @@
 		//生成したコードをファイルに書き出す
 		string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
 		string outputFilePath = Path.Combine(templateDirectory, outputFileName);
-		File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+
+		using(StreamWriter writer = new StreamWriter(outputFilePath, true, System.Text.Encoding.UTF8))
+		{
+			writer.Write(this.GenerationEnvironment.ToString());
+			writer.Close();
+		}
 
 		//生成したコードを一旦クリアする
 		this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
