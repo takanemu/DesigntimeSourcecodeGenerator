@@ -63,6 +63,16 @@
 					string generatedFileName = filePath + ".generated.cs";
 					bool first = false;
 
+					if (File.Exists(projectItem.FileNames[0]) && File.Exists(generatedFileName))
+					{
+						var originUpdate = System.IO.File.GetLastWriteTime(projectItem.FileNames[0]);
+						var generatedUpdate = System.IO.File.GetLastWriteTime(generatedFileName);
+
+						if(originUpdate <= generatedUpdate && !filecreate.ContainsKey(generatedFileName))
+						{
+							continue;
+						}
+					}
 					if(!filecreate.ContainsKey(generatedFileName))
 					{
 						// 初回ファイル初期化
