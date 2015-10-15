@@ -11,7 +11,7 @@ namespace DesigntimeSourcecodeGenerator.Demo.Model
 	/// このクラスはTestClassクラスの定義によって、自動生成されました。
 	/// このファイルをエディタで直接編集しないでください。
 	/// </summary>
-	public partial class TestClass
+	internal partial class TestClass
 	{
 #region Logger
 		/// <summary>

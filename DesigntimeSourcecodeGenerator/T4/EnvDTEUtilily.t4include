@@ -255,7 +255,7 @@
 		}
 	}
 
-	/// <summary
+	/// <summary>
 	/// ファイルを保存してプロジェクトに追加します
 	/// </summary>
 	public void SaveOutput(string outputFileName, Project project)
@@ -277,7 +277,7 @@
 		project.ProjectItems.AddFromFile(outputFilePath);
 	}
 
-	/// <summary
+	/// <summary>
 	/// 指定クラスの基底クラスとインターフェースを取得する
 	/// </summary>
 	public string GetBaseInterface(CodeClass clazz)
@@ -312,5 +312,21 @@
 			baseInterface += implemented.FullName;
 		}
 		return baseInterface;
+	}
+
+	/// <summary>
+	/// クラスのアクセス属性列挙型を文字列へ変換する
+	/// </summary>
+	public string ConvVsCMAccess2String(vsCMAccess access)
+	{
+		string result = "internal";
+
+		switch(access)
+		{
+			case vsCMAccess.vsCMAccessPublic:
+				result = "public";
+				break;
+		}
+		return result;
 	}
 #>

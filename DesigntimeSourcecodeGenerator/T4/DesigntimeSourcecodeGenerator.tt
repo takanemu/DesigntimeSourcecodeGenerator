@@ -98,6 +98,7 @@
 		//対象クラスと同じ名前空間として定義する
 		string classNamespace = clazz.Namespace.Name;
 		string className =  clazz.Name;
+		string access = ConvVsCMAccess2String(clazz.Access);
 
 		var attrDic = new Dictionary<string, List<string>>();
 
@@ -160,7 +161,7 @@ namespace <#= classNamespace #>
 	/// このクラスは<#=className#>クラスの定義によって、自動生成されました。
 	/// このファイルをエディタで直接編集しないでください。
 	/// </summary>
-	public partial class <#= className #>
+	<#= access #> partial class <#= className #>
 	{
 <#+
 		// TemplateGenerateAnnotation属性を抽出

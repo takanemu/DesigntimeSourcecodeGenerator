@@ -3,7 +3,7 @@
     using Designtime.Sourcecode.Generator.Attributes;
 
     [TemplateGenerateAnnotation(Kind = "Logger", Comment = "Logger")]
-    public partial class TestClass
+    internal partial class TestClass
     {
         public TestClass()
         {
