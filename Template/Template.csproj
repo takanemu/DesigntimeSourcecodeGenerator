@@ -49,6 +49,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
     <None Include="T4\EnvDTEUtilily.t4include" />
   </ItemGroup>
@@ -57,9 +60,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DesigntimeSourcecodeGenerator.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

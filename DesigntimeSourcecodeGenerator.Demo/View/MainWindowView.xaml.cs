@@ -33,6 +33,8 @@ namespace DesigntimeSourcecodeGenerator.Demo.View
     [TemplateGenerateAnnotation(Name = "IsSelected", Type = typeof(bool), Kind = "UIPropertyMetadata", DefaultValue = "false", Comment = "選択", PropertyChangedCallback = true)]
     /// 依存関係プロパティの生成
     [TemplateGenerateAnnotation(Name = "IsOpened", Type = typeof(bool), Kind = "PropertyChangedCallback", Comment = "開き", DefaultValue = "false")]
+    /// 依存関係プロパティの生成
+    [TemplateGenerateAnnotation(Name = "IsActive", Type = typeof(bool), Kind = "PropertyChangedCallback", Comment = "アクティブ", DefaultValue = "false", MetadataOptions = "FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.AffectsMeasure")]
     // ルーティングイベントの生成
     [TemplateGenerateAnnotation(Name = "ItemMouseOver", Kind = "RoutedEvent", RoutingStrategy = "RoutingStrategy.Tunnel", Comment = "アイテムマウスオーバー")]
     public partial class MainWindowView : UserControl
@@ -70,6 +72,16 @@ namespace DesigntimeSourcecodeGenerator.Demo.View
         /// <param name="e"></param>
         private static void OnIsOpenedChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs e)
         {
+        }
+
+        /// <summary>
+        /// 依存関係プロパティの生成
+        /// </summary>
+        /// <param name="depObj"></param>
+        /// <param name="e"></param>
+        private static void OnIsActiveChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs e)
+        {
+            MainWindowView ctrl = (MainWindowView)depObj;
         }
     }
 }

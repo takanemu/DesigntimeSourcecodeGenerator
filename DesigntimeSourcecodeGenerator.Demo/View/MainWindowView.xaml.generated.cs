@@ -62,13 +62,28 @@ namespace DesigntimeSourcecodeGenerator.Demo.View
 		/// <summary>
 		/// 開き
 		/// </summary>
-		public static readonly DependencyProperty IsOpenedProperty = DependencyProperty.Register("IsOpened", typeof(bool), typeof(MainWindowView), new FrameworkPropertyMetadata((bool)false, new PropertyChangedCallback(OnIsOpenedChanged)));
+		public static readonly DependencyProperty IsOpenedProperty = DependencyProperty.Register("IsOpened", typeof(bool), typeof(MainWindowView), new FrameworkPropertyMetadata((bool)false, FrameworkPropertyMetadataOptions.None, new PropertyChangedCallback(OnIsOpenedChanged)));
 		public bool IsOpened
 		{
 			get { return (bool)this.GetValue(IsOpenedProperty); }
 			set { this.SetValue(IsOpenedProperty, value); }
 		}
 		//private static void OnIsOpenedChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs e)
+		//{
+		//	MainWindowView ctrl = (MainWindowView)depObj;
+		//}
+#endregion
+#region アクティブ
+		/// <summary>
+		/// アクティブ
+		/// </summary>
+		public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register("IsActive", typeof(bool), typeof(MainWindowView), new FrameworkPropertyMetadata((bool)false, FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnIsActiveChanged)));
+		public bool IsActive
+		{
+			get { return (bool)this.GetValue(IsActiveProperty); }
+			set { this.SetValue(IsActiveProperty, value); }
+		}
+		//private static void OnIsActiveChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs e)
 		//{
 		//	MainWindowView ctrl = (MainWindowView)depObj;
 		//}

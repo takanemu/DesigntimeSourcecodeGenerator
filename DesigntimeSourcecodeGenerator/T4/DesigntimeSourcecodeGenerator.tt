@@ -278,6 +278,12 @@ namespace <#= classNamespace #>
 				commandParameter = string.Empty;
 			}
 
+			string options;
+			if(!argDic.TryGetValue("MetadataOptions", out options))
+			{
+				options = "FrameworkPropertyMetadataOptions.None";
+			}
+
 #>
 #region <#= propertyComment #>
 		/// <summary>
@@ -321,7 +327,7 @@ namespace <#= classNamespace #>
 			else if(propertyKind == "PropertyChangedCallback")
 			{
 				// 依存関係プロパティの生成
-				GeneratePropertyChangedCallback(typeConverter, propertyType, propertyName, summary, className, defaultValue);
+				GeneratePropertyChangedCallback(typeConverter, propertyType, propertyName, summary, className, defaultValue, options);
 			}
 			else if(propertyKind == "GlobalVariableManager")
 			{
@@ -633,14 +639,14 @@ private void GenerateUIPropertyMetadata(string typeConverter, string propertyTyp
 /// <summary>
 /// GeneratePropertyChangedCallback生成します
 /// </summary>
-private void GeneratePropertyChangedCallback(string typeConverter, string propertyType, string propertyName, string summary, string className, string defaultValue)
+private void GeneratePropertyChangedCallback(string typeConverter, string propertyType, string propertyName, string summary, string className, string defaultValue, string options)
 {
 	if (!string.IsNullOrEmpty(summary))
 	{
 		GeneratePropertyComment(summary);
 	}
 #>
-		public static readonly DependencyProperty <#= propertyName #>Property = DependencyProperty.Register("<#= propertyName #>", typeof(<#= propertyType #>), typeof(<#= className #>), new FrameworkPropertyMetadata((<#= propertyType #>)<#= defaultValue #>, new PropertyChangedCallback(On<#= propertyName #>Changed)));
+		public static readonly DependencyProperty <#= propertyName #>Property = DependencyProperty.Register("<#= propertyName #>", typeof(<#= propertyType #>), typeof(<#= className #>), new FrameworkPropertyMetadata((<#= propertyType #>)<#= defaultValue #>, <#= options #>, new PropertyChangedCallback(On<#= propertyName #>Changed)));
 		public <#= propertyType #> <#= propertyName #>
 		{
 			get { return (<#= propertyType #>)this.GetValue(<#= propertyName #>Property); }

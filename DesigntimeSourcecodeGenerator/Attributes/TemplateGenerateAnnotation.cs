@@ -2,6 +2,7 @@
 namespace Designtime.Sourcecode.Generator.Attributes
 {
     using System;
+    using System.Windows;
 
     /// <summary>
     /// プロパティ、コマンドなどの生成をDesigntimeSourcecodeGeneratorへ属性で指示します。
@@ -24,6 +25,8 @@ namespace Designtime.Sourcecode.Generator.Attributes
     /// [TemplateGenerateAnnotation(Name = "Age", Type = typeof(int), Kind = "UIPropertyMetadata", Comment = "年齢", DefaultValue = "0", PropertyChangedCallback = true)]
     /// 例：依存関係プロパティの生成
     /// [TemplateGenerateAnnotation(Name = "Age", Type = typeof(int), Kind = "PropertyChangedCallback", Comment = "年齢", DefaultValue = "0")]
+    /// 例：依存関係プロパティの生成(FrameworkPropertyMetadataOptions指定)
+    /// [TemplateGenerateAnnotation(Name = "Age", Type = typeof(int), Kind = "PropertyChangedCallback", Comment = "年齢", DefaultValue = "0", MetadataOptions = "FrameworkPropertyMetadataOptions.Inherits | FrameworkPropertyMetadataOptions.AffectsMeasure")]
     /// 例：コマンドの生成
     /// [TemplateGenerateAnnotation(Name = "Push", Kind = "Command", Comment = "押す")]
     /// 例：コマンドの生成（CanPushメソッドも生成）
@@ -117,6 +120,12 @@ namespace Designtime.Sourcecode.Generator.Attributes
         public string RoutingStrategy { get; set; }
 
         /// <summary>
+        /// FrameworkPropertyMetadataOptions 列挙型
+        /// Kind = "PropertyChangedCallback"の時だけ指定可能
+        /// </summary>
+        public string MetadataOptions { get; set; }
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         public TemplateGenerateAnnotation()
@@ -129,6 +138,7 @@ namespace Designtime.Sourcecode.Generator.Attributes
             this.SetNotificator = false;
             this.CommandParameter = null;
             this.PropertyChangedCallback = false;
+            this.MetadataOptions = "FrameworkPropertyMetadataOptions.None";
         }
     }
 }
